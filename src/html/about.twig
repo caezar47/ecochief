@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"О компании"}  %}
+    </head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            navbar_mod:     'is--scroll',
+            active:         page.about,
+        } %} 
+        
+        
+        <main class="{{prefix.content}}wrap" style="background-image:url({{path.img}}/bg/main.jpg)">
+            {% include "../block/page/page.twig" with {
+                view:               'page',
+                content_prefix:     prefix.content, 
+                content:[
+                    {
+                        view:           'about',
+                        container:      'true',
+                        heading:        'О компании',
+                        heading_tag:    'h1',
+
+                        bread:[
+                            {
+                                name: 'Главная',
+                                link: page.index,
+                            },
+                            {
+                                name: 'О компании',
+                            },
+                        ],
+
+                        text:           '<p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem alias exercitationem, ut quibusdam sequi? Dolore delectus fugit, aperiam impedit labore at, beatae culpa. Voluptatibus dolorum aperiam id nihil ex impedit tempore sint beatae minima quo hic, nam molestias sunt sit iusto consequatur commodi ab vel aliquam obcaecati nisi mollitia! Ut vero excepturi animi, harum quisquam, illo voluptatibus repellat doloremque rerum sapiente qui ipsum itaque fuga cum voluptate aspernatur, expedita laborum veritatis. Ad eligendi, incidunt harum provident corporis, repudiandae deleniti, consectetur dolorem ex rerum quo excepturi hic unde non aut in animi? Pariatur quidem error expedita similique ipsum sunt totam reprehenderit?</p>
+                    <h2>Lorem ipsum dolor, sit,</h2>
+                    <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem alias exercitationem, ut quibusdam sequi? Dolore delectus fugit, aperiam impedit labore at, beatae culpa. Voluptatibus dolorum aperiam id nihil ex impedit tempore sint beatae minima quo hic, nam molestias sunt sit iusto consequatur commodi ab vel aliquam obcaecati nisi mollitia! Ut vero excepturi animi, harum quisquam, illo voluptatibus repellat doloremque rerum sapiente qui ipsum itaque fuga cum voluptate aspernatur, expedita laborum veritatis. Ad eligendi, incidunt harum provident corporis, repudiandae deleniti, consectetur dolorem ex rerum quo excepturi hic unde non aut in animi? Pariatur quidem error expedita similique ipsum sunt totam reprehenderit?</p>
+                    <h3>Lorem ipsum dolor, sit,</h3>
+                    <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem alias exercitationem, ut quibusdam sequi? Dolore delectus fugit, aperiam impedit labore at, beatae culpa. Voluptatibus dolorum aperiam id nihil ex impedit tempore sint beatae minima quo hic, nam molestias sunt sit iusto consequatur commodi ab vel aliquam obcaecati nisi mollitia! Ut vero excepturi animi, harum quisquam, illo voluptatibus repellat doloremque rerum sapiente qui ipsum itaque fuga cum voluptate aspernatur, expedita laborum veritatis. Ad eligendi, incidunt harum provident corporis, repudiandae deleniti, consectetur dolorem ex rerum quo excepturi hic unde non aut in animi? Pariatur quidem error expedita similique ipsum sunt totam reprehenderit?</p>
+                    <ol>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quia.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quia.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quia.</li>                         
+                    </ol>
+                    <h4>Lorem ipsum dolor, sit,</h4>
+                    <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem alias exercitationem, ut quibusdam sequi? Dolore delectus fugit, aperiam impedit labore at, beatae culpa. Voluptatibus dolorum aperiam id nihil ex impedit tempore sint beatae minima quo hic, nam molestias sunt sit iusto consequatur commodi ab vel aliquam obcaecati nisi mollitia! Ut vero excepturi animi, harum quisquam, illo voluptatibus repellat doloremque rerum sapiente qui ipsum itaque fuga cum voluptate aspernatur, expedita laborum veritatis. Ad eligendi, incidunt harum provident corporis, repudiandae deleniti, consectetur dolorem ex rerum quo excepturi hic unde non aut in animi? Pariatur quidem error expedita similique ipsum sunt totam reprehenderit?</p><ul>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quia.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quia.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quia.</li>                         
+                    </ul>
+                    <h5>Lorem ipsum dolor, sit,</h5>
+                    <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem alias exercitationem, ut quibusdam sequi? Dolore delectus fugit, aperiam impedit labore at, beatae culpa. Voluptatibus dolorum aperiam id nihil ex impedit tempore sint beatae minima quo hic, nam molestias sunt sit iusto consequatur commodi ab vel aliquam obcaecati nisi mollitia! Ut vero excepturi animi, harum quisquam, illo voluptatibus repellat doloremque rerum sapiente qui ipsum itaque fuga cum voluptate aspernatur, expedita laborum veritatis. Ad eligendi, incidunt harum provident corporis, repudiandae deleniti, consectetur dolorem ex rerum quo excepturi hic unde non aut in animi? Pariatur quidem error expedita similique ipsum sunt totam reprehenderit?</p>
+                    <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem alias exercitationem, ut quibusdam sequi? Dolore delectus fugit, aperiam impedit labore at, beatae culpa. Voluptatibus dolorum aperiam id nihil ex impedit tempore sint beatae minima quo hic, nam molestias sunt sit iusto consequatur commodi ab vel aliquam obcaecati nisi mollitia! Ut vero excepturi animi, harum quisquam, illo voluptatibus repellat doloremque rerum sapiente qui ipsum itaque fuga cum voluptate aspernatur, expedita laborum veritatis. Ad eligendi, incidunt harum provident corporis, repudiandae deleniti, consectetur dolorem ex rerum quo excepturi hic unde non aut in animi? Pariatur quidem error expedita similique ipsum sunt totam reprehenderit?</p>
+                    <h6>Lorem ipsum dolor, sit,</h6>
+                    <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem alias exercitationem, ut quibusdam sequi? Dolore delectus fugit, aperiam impedit labore at, beatae culpa. Voluptatibus dolorum aperiam id nihil ex impedit tempore sint beatae minima quo hic, nam molestias sunt sit iusto consequatur commodi ab vel aliquam obcaecati nisi mollitia! Ut vero excepturi animi, harum quisquam, illo voluptatibus repellat doloremque rerum sapiente qui ipsum itaque fuga cum voluptate aspernatur, expedita laborum veritatis. Ad eligendi, incidunt harum provident corporis, repudiandae deleniti, consectetur dolorem ex rerum quo excepturi hic unde non aut in animi? Pariatur quidem error expedita similique ipsum sunt totam reprehenderit?</p>',
+
+                        
+                    },
+                ],
+            } %}
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %}
+
+        {% include "../block/common/script/script.twig" %}
+    </body>
+</html>

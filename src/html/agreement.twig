@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Соглашение на обработку персональных данных"}  %}
+    </head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            navbar_mod:     'is--scroll',
+            active:         page.agreement,
+        } %} 
+        
+        
+        <main class="{{prefix.content}}wrap" style="background-image:url({{path.img}}/bg/main.jpg)">
+            {% include "../block/page/page.twig" with {
+                view:               'page',
+                content_prefix:     prefix.content, 
+                content:[
+                    {
+                        view:           'agreement',
+                        container:      'true',
+                        heading:        'Соглашение на обработку персональных данных',
+                        heading_tag:    'h1',
+
+                        bread:[
+                            {
+                                name: 'Главная',
+                                link: page.index,
+                            },
+                            {
+                                name: 'Соглашение на обработку персональных данных',
+                            },
+                        ],
+
+                        
+                    },
+                ],
+            } %}
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %}
+
+        {% include "../block/common/script/script.twig" %}
+    </body>
+</html>
