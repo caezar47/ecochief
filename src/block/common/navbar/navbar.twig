@@ -1,0 +1,106 @@
+{% if view == "base" %}
+<header class="{{navbar_prefix}}block  {{navbar_mod}}">
+	<div class="{{navbar_prefix}}header">
+		<div class="container">
+			<div class="{{navbar_prefix}}header-row flex__row">
+				<button class="{{navbar_prefix}}hamburger-card" data-hamburger>
+					<span class="{{navbar_prefix}}hamburger-card-inner">
+						<span class="{{navbar_prefix}}hamburger-card-line  is--left"></span>
+						<span class="{{navbar_prefix}}hamburger-card-line  is--center"></span>
+						<span class="{{navbar_prefix}}hamburger-card-line  is--right"></span>
+					</span>
+				</button>
+				<div class="is--logotip"> 
+					<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+						<img src="{{path.img}}/default/logotip.png" class="img-responsive" alt="">
+					</a>
+				</div>
+				<div class="is--soc">
+					<div class="{{navbar_prefix}}soc">
+						<a class="{{navbar_prefix}}soc-item" href="{{soc.inst}}" target="_blank"><img src="{{path.img}}/default/soc-inst.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="{{navbar_prefix}}collapse" >
+		<div class="{{navbar_prefix}}collapse-inner">	
+			<div class="{{navbar_prefix}}info  container">
+				<div class="{{navbar_prefix}}collapse-row  flex__row">					
+					<div class="is--logotip">
+						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+							<img src="{{path.img}}/default/logotip.png" class="img-responsive" alt="">
+						</a>
+					</div>					
+					<div class="is--contacts">
+						<div class="{{navbar_prefix}}contacts  flex__row">
+							<div>
+								<p class="{{navbar_prefix}}contacts-item  is--address">
+									{% include "../svg-sprite/svg.twig" with {icon:'contacts-address'} %} 
+									<span>{{contacts.address}}</span>
+								</p> 
+							</div>
+							<div>
+								<a class="{{navbar_prefix}}contacts-item" href="tel:{{contacts.phone_tel}}">
+									{% include "../svg-sprite/svg.twig" with {icon:'contacts-phone'} %}
+									тел./ факс: {{contacts.phone}}
+								</a>
+								<a class="{{navbar_prefix}}contacts-item" href="mailto:{{contacts.email}}">
+									{% include "../svg-sprite/svg.twig" with {icon:'contacts-email'} %}
+									email: {{contacts.email}}
+								</a>
+							</div>
+						</div>
+					</div>
+					{# <div class="is--humb">
+						<button class="{{navbar_prefix}}hamburger-card  is--active" data-hamburger-close>
+							{% include "../svg-sprite/svg.twig" with {icon:'humb-close'} %} 
+						</button>
+					</div> #}
+					<div class="is--soc">
+						<div class="{{navbar_prefix}}soc">
+							<a class="{{navbar_prefix}}soc-item" href="{{soc.inst}}" target="_blank"><img src="{{path.img}}/default/soc-inst.png" alt=""></a>
+						</div>
+					</div>					
+				</div>
+			</div>			
+			<nav class="{{navbar_prefix}}nav">
+				<div class="container">
+					<ul class="{{navbar_prefix}}nav-list">
+						{% include "item.twig" with {
+							prefix:navbar_prefix, 
+							list : [
+								{
+									name:"Главная", 
+									link:page.index, 
+									mod:""
+								},
+								{
+									name:"О компании", 
+									link:page.about, 
+									mod:""
+								},
+								{
+									name:"Продукция", 
+									link:page.products, 
+									mod:""
+								},	
+								{
+									name:"Каталог", 
+									link:page.catalog, 
+									mod:""
+								},	
+								{
+									name:"Контакты", 
+									link:page.contacts, 
+									mod:""
+								},	
+							]
+						} %}
+					</ul>	
+				</div>                                          
+			</nav>
+		</div>
+	</div>
+</header>
+{% endif %}

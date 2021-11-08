@@ -1,0 +1,57 @@
+{
+	"contacts":{
+		"name":"ecochief",
+		"domain":"ecochief",
+		"domain_link":"ecochief",
+		"color":"#F24F00",
+		"agreement_page":"agreement",
+		"email":"office@upiterco.ru",
+		"phone":"+7 (4862) 72-36-59",  
+		"phone_tel":"+74862723659", 
+		"address":"302042, Орловская область, город Орёл, Автогрейдерная улица, дом 4, офис 2",
+		"map_center":"52.977, 36.068",
+		"map_center_coord":"[52.977, 36.068]",
+		"map_zoom":"18",
+		"map_zoom_xs":"12",
+		"map_point_coord":"[55.737464, 37.6367]",
+		"map_point_heading":"Большая Татарская улица, 35 строение 7-9"
+	},
+	"soc":{
+		"yb":"https://www.youtube.com/",
+		"inst":"https://www.instagram.com/",
+		"tw":"https://www.twitter.com/",
+		"fb":"https://www.facebook.com/"
+	},
+	"page":{
+		"index":"./",
+		"about":"./about.html",
+		"products":"./products.html",
+		"catalog":"./catalog.html",
+		"category":"./category.html",
+		"card":"./card.html",
+		"contacts":"./contacts.html"
+	},
+	"prefix":{
+		"content":"section__",
+		"heading":"page-header__",
+		"btn":"button__",
+		"form":"form__",
+		"card":"card__",
+		"video":"video__",
+		"table":"table__",
+		"tabs":"tabs__",
+		"map":"map__",
+		"smap":"map-svg__",
+		"link":"link__",
+		"breadcrumb":"breadcrumb__",
+		"pagination":"pagination__",
+		"btn-icon":"btn-icon__"
+	},
+	"path":{		                  
+		"css":"./css",
+		"img":"./img",
+		"js":"./js",
+		"favicon":"./favicon",
+		"docs":"./docs" 
+	}
+}

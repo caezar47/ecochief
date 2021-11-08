@@ -1,0 +1,37 @@
+{% if view == 'product' %}
+	{% for value in list %}
+	<{% if value.link %}a href="{{value.link}}"{% else %}div{% endif %} class="{{prefix}}item  {{mod}}  {{value.group}}">
+		{% if value.label %}
+		<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+		{% endif %}
+		{% if value.img %}
+		<div class="{{prefix}}img  {{mod}}">
+			<img src="{{value.img}}" class="img-responsive" alt="{{value.name}}">
+		</div>
+		{% endif %}
+		<div class="{{prefix}}group  {{mod}}">
+			{% if value.name %}
+			<p class="{{prefix}}heading  {{mod}}">				
+				<span>{{value.name}}</span>
+			</p> 
+			{% endif %}
+			{% if value.weight %}
+			<p class="{{prefix}}weight  {{mod}}">				
+				{{value.weight}}
+			</p> 
+			{% endif %}
+		</div> 
+	</{% if value.link %}a{% else %}div{% endif %}>
+	{% endfor %}
+{% endif %}
+{% if view == 'partners' %}
+	{% for value in list %}
+		<div>
+			<{% if value.link %}a href="{{value.link}}" target="_blank" {% else %}div{% endif %} class="{{prefix}}item  {{mod}}">
+				<div class="{{prefix}}img  {{mod}}">
+					<img src="{{value.img}}" class="img-responsive" alt="">
+				</div>
+			</{% if value.link %}a{% else %}div{% endif %}>
+		</div>
+	{% endfor %}
+{% endif %}

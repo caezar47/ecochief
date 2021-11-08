@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>
+		{% include "../block/common/head/head.twig" with {title:"Главная"}  %}
+	</head>
+	<body>
+		{% include "../block/common/navbar/navbar.twig" with {
+			view:           'base',
+			navbar_prefix:  'navbar__',
+			navbar_mod:     'is--index',
+			navbar_mod:     '',
+			navbar_mod:     'is--scroll ',
+			active:         page.index,
+		} %} 
+		
+		<main class="{{prefix.content}}wrap">
+			{% include "../block/page/page.twig" with {
+                view:               'index',
+                content_prefix:     prefix.content, 
+                content:[
+                	{
+                        view:      		'header',
+                        mod:       		'is--index-header',
+                        img:			[path.img,"/page/index/header-item1.jpg"].join(""),
+                	},
+                	{
+                        view:			'catalog',
+                        container:		'true',
+                        mod:       		'is--index-catalog',
+                        heading:		'Новинки',
+                        heading_tag:   	'h2',
+                        bg:				[path.img,"/bg/index-catalog.jpg"].join(""),
+
+						card_view:          'product',
+						card_prefix:        prefix.card,
+						card_mod:           'is--product-item',
+						card_list:[
+							{
+								link:	page.card,
+								img: 	[path.img,"/page/catalog/product-item1.png"].join(""),
+								name: 	'Масло подсолнечное Ecochief рафинированное дезодорированное, Тимьян и Чеснок,', 
+								weight: '<span>500</span> мл', 
+								label: 'Новинка', 
+							}, 
+							{
+								link:	page.card,
+								img: 	[path.img,"/page/catalog/product-item2.png"].join(""),
+								name: 	'Паштет Французский с сыром', 
+								weight: '<span>100</span> мл', 
+								label: 'Новинка', 
+							}, 
+							{
+								link:	page.card,
+								img: 	[path.img,"/page/catalog/product-item3.png"].join(""),
+								name: 	'Икра из кабачков', 
+								weight: '<span>450</span> мл', 
+								label: 'Новинка', 
+							}, 
+							{
+								link:	page.card,
+								img: 	[path.img,"/page/catalog/product-item1.png"].join(""),
+								name: 	'Масло оливковое Pure', 
+								weight: '<span>230</span> мл', 
+								label: 'Новинка', 
+							}, 
+						],
+
+						btn:                'Весь каталог продукции',
+						btn_prefix:         prefix.btn,
+						btn_tag:            'a',
+						btn_elem:           'item',
+						btn_link:           page.catalog,
+                	},
+                	{
+                        view:			'partners',
+                        container:		'true',
+                        mod:       		'is--index-partners',
+                        heading:		'Наши партнеры',
+                        heading_tag:   	'h2',
+
+						card_view:          'partners',
+						card_prefix:        prefix.card,
+						card_mod:           'is--partners-item',
+						card_list:[
+							{
+								link:	'//online.globus.ru/search/?q=Ecochief',
+								img: 	[path.img,"/page/index/partners-item1.png"].join(""),
+							}, 
+							{
+								link:	'//linia-market.ru/#!/goods/search/Ecochief',
+								img: 	[path.img,"/page/index/partners-item2.png"].join(""),
+							}, 
+							{
+								link:	'//www.wildberries.ru/brands/ecochief',
+								img: 	[path.img,"/page/index/partners-item3.png"].join(""),
+							}, 
+							{
+								link:	'//www.utkonos.ru/brands/ecochief',
+								img: 	[path.img,"/page/index/partners-item4.png"].join(""),
+							}, 
+							{
+								link:	'//tvoydom.ru/search/?q=ecochief',
+								img: 	[path.img,"/page/index/partners-item5.png"].join(""),
+							}, 
+							{
+								link:	'//www.ozon.ru/brand/ecochief-83849201/',
+								img: 	[path.img,"/page/index/partners-item6.png"].join(""),
+							}, 
+							{
+								link:	'//shop-lot.ru/brand/ecochief/',
+								img: 	[path.img,"/page/index/partners-item7.png"].join(""),
+							}, 
+							{
+								link:	'://market.yandex.ru/search?text=Ecochief',
+								img: 	[path.img,"/page/index/partners-item8.png"].join(""),
+							},
+							{
+								link:	'//sbermegamarket.ru/catalog/?q=ecochief',
+								img: 	[path.img,"/page/index/partners-item9.png"].join(""),
+							},
+							{
+								link:	'//www.onlinetrade.ru/brands/ecochief/',
+								img: 	[path.img,"/page/index/partners-item10.png"].join(""),
+							}, 
+							{
+								link:	'//sbermegamarket.ru/catalog/?q=ecochief',
+								img: 	[path.img,"/page/index/partners-item9.png"].join(""),
+							},
+							{
+								link:	'//www.onlinetrade.ru/brands/ecochief/',
+								img: 	[path.img,"/page/index/partners-item10.png"].join(""),
+							}, 
+							{
+								link:	'//shop-lot.ru/brand/ecochief/',
+								img: 	[path.img,"/page/index/partners-item7.png"].join(""),
+							}, 
+							{
+								link:	'://market.yandex.ru/search?text=Ecochief',
+								img: 	[path.img,"/page/index/partners-item8.png"].join(""),
+							},
+							{
+								link:	'//www.ozon.ru/brand/ecochief-83849201/',
+								img: 	[path.img,"/page/index/partners-item6.png"].join(""),
+							}, 
+							{
+								link:	'//shop-lot.ru/brand/ecochief/',
+								img: 	[path.img,"/page/index/partners-item7.png"].join(""),
+							}, 
+						],
+                	},
+                ],
+            } %}
+		</main>
+
+		{% include "../block/common/footer/footer.twig" with {
+			view:"base",
+			footer_prefix:"footer__"
+		} %}
+
+		{% include "../block/common/script/script.twig" %}
+	</body>
+</html>

@@ -1,0 +1,11 @@
+<ul class="{{content_prefix}}bread  {{content.heading_mod}}  {{heading_mod}}">
+	{% for bread in bread %}
+	<li>
+		{% if bread.link %}
+			<a href="{{bread.link}}">{{bread.name}}</a>
+		{% else %}
+			{{bread.name}}
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>

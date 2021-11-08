@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Продукция"}  %}
+    </head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            navbar_mod:     'is--scroll',
+            active:         page.products,
+        } %} 
+        
+        
+        <main class="{{prefix.content}}wrap" style="background-image:url({{path.img}}/bg/main.jpg)">
+            {% include "../block/page/page.twig" with {
+                view:               'catalog',
+                content_prefix:     prefix.content, 
+                content:[
+                    {
+                        view:           'list',
+                        mod:            'is--products',
+                        bg:             [path.img,"/bg/products.jpg"].join(""),
+
+                        card_view:          'product',
+                        card_prefix:        prefix.card,
+                        card_mod:           'is--products-showcase',
+                        card_prod_list:[
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products1.png"].join(""),
+                                name:   'Плодоовощная консервация', 
+                                group:    'is--item1',
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products2.png"].join(""),
+                                name:   'Сгущенное молоко ГОСТ и ТУ', 
+                                group:    'is--item2',
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products3.png"].join(""),
+                                name:   'Продукция для канала HoReCa', 
+                                group:    'is--item3',
+                            },  
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products4.png"].join(""),
+                                name:   'Масло Оливковое и Льняное', 
+                                group:    'is--item4',
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products5.png"].join(""),
+                                name:   'Масло подсолнечное с травами и специями', 
+                                group:    'is--item5',
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products6.png"].join(""),
+                                name:   'Каши, фрикасе, гарниры', 
+                                group:    'is--item6',
+                            }, 
+                            
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products7.png"].join(""),
+                                name:   'Паштеты', 
+                                group:  'is--item7',
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products8.png"].join(""),
+                                name:   'Мясная консервация', 
+                                group:    'is--item8',
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products9.png"].join(""),
+                                name:   'Рыбная консервация', 
+                                group:    'is--item9',
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-products10.png"].join(""),
+                                name:   'Макаронные изделия', 
+                                group:    'is--item10',
+                            }, 
+                        ],
+                    },
+                    {
+                        view:           'list',
+                        container:      'true',
+                        mod:            'is--catalog-list',
+                        group:          'hidden--screen',
+                        heading:        'Продукция',
+                        heading_tag:    'h1',
+
+                        card_view:          'product',
+                        card_prefix:        prefix.card,
+                        card_mod:           'is--catalog-list',
+                        card_list:[
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item1.png"].join(""),
+                                name:   'Плодоовощная консервация', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item2.png"].join(""),
+                                name:   'Сгущенное молоко ГОСТ и ТУ', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item3.png"].join(""),
+                                name:   'Продукция для канала HoReCa', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item4.png"].join(""),
+                                name:   'Масло Оливковое и Льняное', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item5.png"].join(""),
+                                name:   'Масло подсолнечное с травами и специями', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item6.png"].join(""),
+                                name:   'Каши, фрикасе, гарниры', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item7.png"].join(""),
+                                name:   'Паштеты', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item7.png"].join(""),
+                                name:   'Мясная консервация', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item7.png"].join(""),
+                                name:   'Рыбная консервация', 
+                            }, 
+                            {
+                                link:   page.category,
+                                img:    [path.img,"/page/catalog/catalog-item7.png"].join(""),
+                                name:   'Макаронные изделия', 
+                            }, 
+                        ],
+                    },
+                ],
+            } %}
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %}
+
+        {% include "../block/common/script/script.twig" %}
+    </body>
+</html>

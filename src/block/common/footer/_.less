@@ -1,0 +1,108 @@
+.footer__{
+	&block{
+		text-align: center;
+		padding: 30px 0;
+		.font(0.778rem, 200%);
+		font-weight: 300;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		background-position: 0 0, 0 0,center;
+		background-size: 0, 0, cover;
+		.media-breakpoint-up(@md; {
+			text-align: left;
+		});
+		.media-breakpoint-up(@xl; {
+			padding: 40px 0 60px;
+			background-size: auto, auto, cover;
+			background-position: -3.5% 116%,85% 190%,center;
+		});
+		.media-breakpoint-up(@xxl; {
+			background-position: -3.5% 95%,85% 190%,center;
+		});
+	}
+	&container{
+		&.container{
+			
+		}
+	}
+	&row{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 15px;	
+		& > *{
+			flex: 1 1 100%;		
+			&:nth-child(2){
+				display: none;
+			}	
+		}
+		.media-breakpoint-up(@md; {
+			flex-wrap: nowrap;
+			& > *{
+				flex: initial;
+				padding-top: 15px;
+				&:nth-child(1){
+					padding-top: 0;
+					flex: 0 0 27%;
+				}
+				&:nth-child(3){
+					flex: 0 0 40%;
+				}
+			}
+		});
+		.media-breakpoint-up(@xl; {
+			& > *{
+				&:nth-child(1){
+					flex: 0 0 22.5%;
+				}
+				&:nth-child(2){
+					display: block;
+					flex: 0 0 12.5%;
+				}
+				&:nth-child(3){
+					flex: 0 0 23%;
+				}
+			}
+		});
+	}
+	&logotip{
+		display: block;
+		max-width: 181px;
+		margin: 0 auto 25px;
+		.media-breakpoint-up(@md; {
+			margin: 0 0 25px;
+		});
+		.media-breakpoint-up(@xl; {
+			margin: 0 0 40px;
+		});
+	}
+	&copyright{
+		.text12();
+		& + &{
+			padding-top: 15px;
+		}
+		a{
+			text-decoration: underline;
+		}
+	}
+	&nav{
+		&{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		&-item{
+			margin-bottom: 2px;
+		}
+		&-link{			
+			color: @black;
+			&:hover{
+				color: @primary;
+			}
+		}
+	}
+	&contacts{
+		a{
+			color: @default;
+		}
+	}
+}

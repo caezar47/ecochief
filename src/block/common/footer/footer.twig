@@ -1,0 +1,62 @@
+{% if view == "base" %}
+	<footer class="{{footer_prefix}}block" style="background-image:url({{path.img}}/bg/footer-left.png),url({{path.img}}/bg/footer-right.png), url({{path.img}}/bg/footer.jpg)"> 	
+		<div class="{{footer_prefix}}container container">
+			<div class="{{footer_prefix}}row">
+				<div>
+					<a href="{{page.index}}" class="{{footer_prefix}}logotip">
+						<img src="{{path.img}}/default/logotip.png" class="img-responsive" alt="">
+					</a>
+					<p class="{{footer_prefix}}copyright">
+						<a href="{{page.agreement}}">Политика конфиденциальности.</a>
+					</p>
+					<p class="{{footer_prefix}}copyright">© 2021 Все права защищены. </p>
+				</div>
+				<div>
+					<ul class="{{footer_prefix}}nav">
+						{% include "../navbar/item.twig" with {
+							prefix:footer_prefix, 
+							list : [
+								{
+									name:"Главная", 
+									link:page.index, 
+									mod:""
+								},
+								{
+									name:"О компании", 
+									link:page.about, 
+									mod:""
+								},
+								{
+									name:"Продукция", 
+									link:page.products, 
+									mod:""
+								},	
+								{
+									name:"Каталог", 
+									link:page.catalog, 
+									mod:""
+								},	
+								{
+									name:"Контакты", 
+									link:page.catalog, 
+									mod:""
+								},	
+							]
+						} %}
+					</ul>	
+				</div>			
+				<div class="{{footer_prefix}}contacts">
+					{{contacts.address}}
+				</div>
+				<div>
+					<div class="{{footer_prefix}}contacts">
+						<a href="tel:{{contacts.phone_tel}}">тел./ факс: {{contacts.phone}}</a>
+					</div>
+					<div class="{{footer_prefix}}contacts">
+						<a href="mailto:{{contacts.email}}">email: {{contacts.email}}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+{% endif %}

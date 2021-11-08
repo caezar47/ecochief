@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Масло подсолнечное Ecochief рафинированное дезодорированное, Тимьян и Чеснок, 500 мл "}  %}
+    </head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     '',
+            navbar_mod:     'is--scroll',
+            active:         page.card,
+        } %} 
+        
+        <main class="{{prefix.content}}wrap" style="background-image:url({{path.img}}/bg/main.jpg)">
+            {% include "../block/page/page.twig" with {
+                view:               'catalog',
+                content_prefix:     prefix.content, 
+                content:[
+                    {
+                        view:           'list1',
+                        container:      'true',
+                        mod:            'is--catalog-card',
+                        heading:        'Масло подсолнечное Ecochief рафинированное дезодорированное, Тимьян и Чеснок, 500 мл',
+                        heading_tag:    'h1',
+
+                        bread:[
+                            {
+                                name: 'Главная',
+                                link: page.index,
+                            },
+                            {
+                                name: 'Каталог',
+                                link: page.catalog,
+                            },
+                            {
+                                name: 'Масло подсолнечное с травами и специями',
+                                link: page.category,
+                            },
+                            {
+                                name: 'Масло подсолнечное Ecochief рафинированное дезодорированное, Тимьян и Чеснок, 500 мл ',
+                            },
+                        ],
+
+                        desc_prefix:        prefix.card,
+                        desc_mod:           'is--catalog-card',
+                        desc: [
+                            {
+                                img:    [path.img,"/page/catalog/product-item1.png"].join(""),
+                                label: 'Новинка',  
+                                note:[
+                                    {
+                                        name: 'Номер артикула',
+                                        value: '526950001',
+                                    },
+                                    {
+                                        name: 'Срок годности',
+                                        value: '12 месяцев',
+                                    },
+                                    {
+                                        name: 'Состав',
+                                        value: '100% подсолнечное рафинированное дезодорированное масло, сухие тимьян и чеснок',
+                                    },
+                                    {
+                                        name: 'Вид упаковки',
+                                        value: 'бутылка',
+                                    },
+                                    {
+                                        name: 'Объем, л',
+                                        value: '0.5',
+                                    },
+                                    {
+                                        name: 'Энергетическая ценность<br> (ккал на 100 г)',
+                                        value: '899',
+                                    },
+                                    {
+                                        name: 'Жиры, г (в 100 г)',
+                                        value: '99,9',
+                                    },
+                                    {
+                                        name: 'Условия хранения',
+                                        value: 'После вскрытия хранить в прохладном месте ',
+                                    },
+                                ],
+                                info: '<p>Хотите купить продукцию или стать дистрибьютором?</p><p>Звоните! <a href="tel:+7 (4862) 72-36-59">+7 (4862) 72-36-59</a></p>',
+                                desc: '<p>Внешний вид товара может отличаться от его изображения в интернет-магазине.</p><p>На фотографии представлен образец представления/сервировки продукта.</p><p>Количество товара при формировании заказа может быть изменено в меньшую сторону при отсутствии необходимого количества товара.</p>',
+                            },
+                        ],
+
+                        back:                'Вернуться к&nbsp;списку&nbsp;продукции',
+                        back_prefix:         prefix.btn,
+                        back_tag:            'a',
+                        back_elem:           'link',
+                        back_img:            [path.img,"/default/back.png"].join(""),
+                        back_link:           page.category,
+
+                    },
+                ],
+            } %}
+        </main> 
+
+
+
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %}
+
+        {% include "../block/common/script/script.twig" %}
+    </body>
+</html>

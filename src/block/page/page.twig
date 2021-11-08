@@ -1,0 +1,173 @@
+{% if view == "index" %}
+	{% for content in content %}
+	<section class="{{content_prefix}}content  {{content.mod}}" {% if content.bg %}style="background-image: url({{content.bg}});"{% endif %}>
+		{% if content.container %}
+		<div class="{{content_prefix}}container container  {{content.mod}}">
+			{% endif %}
+			{% if content.view == "partners" %}
+				<div class="{{content_prefix}}grid  grid__row  {{content.mod}}">
+			{% endif %}
+			{% if content.heading %}
+				<{{content.heading_tag}} class="{{content_prefix}}heading  {{content.mod}}"> 
+					{{content.heading}}             
+				</{{content.heading_tag}}>
+			{% endif %}
+			{% if content.view == "header" %}
+				<img src="{{content.img}}" class="img-responsive" alt="">
+			{% endif %}
+			{% if content.view == "catalog" %}
+				<div class="{{content_prefix}}grid  grid__row  {{content.mod}}">
+					{% include "../common/card/card.twig" with {
+						view:   content.card_view,
+						prefix: content.card_prefix,
+						mod:    content.card_mod,
+						list:   content.card_list,
+					} %}
+				</div>
+				<div class="{{content_prefix}}btn  {{content.mod}}">
+					{% include "../common/button/tpl.twig" with {
+						view:       'tpl',
+						tag:	    content.btn_tag,
+						link:       content.btn_link,
+						attr:       content.btn_attr,
+						modal:      content.btn_modal,
+						prefix:     content.btn_prefix,
+						mod:        content.btn_mod,
+						elem:       content.btn_elem,
+						icon:       content.btn_icon,
+						icon_svg:	content.btn_icon_svg,
+						name:       content.btn,
+					} %}
+				</div>
+			{% endif %}
+			{% if content.view == "partners" %}
+				<div class="{{content_prefix}}slider  {{content.mod}}" data-slick-partners>
+					{% include "../common/card/card.twig" with {
+						view:   content.card_view,
+						prefix: content.card_prefix,
+						mod:    content.card_mod,
+						list:   content.card_list,
+					} %}
+				</div>
+			</div>
+			{% endif %}
+			{% if content.container %}
+		</div>
+		{% endif %}
+	</section>
+	{% endfor %}
+{% endif %}
+{% if view == "catalog" %}
+	{% for content in content %}
+	<section class="{{content_prefix}}content  {{content.mod}}  {{content.group}}" {% if content.bg %}style="background-image: url({{content.bg}});"{% endif %}>
+		{% if content.container %}
+		<div class="{{content_prefix}}container container  {{content.mod}}">
+			{% endif %}
+			{% if content.bread %}
+				{% include "../common/breadcrumb/tpl.twig" with {
+					bread: content.bread,
+					heading_mod: content.mod,
+				} %}
+			{% endif %}
+			{% if content.heading %}
+				<{{content.heading_tag}} class="{{content_prefix}}heading  {{content.mod}}"> 
+					{{content.heading}}             
+				</{{content.heading_tag}}>
+			{% endif %}
+			{% if content.card_list %}
+				<div class="{{content_prefix}}grid  grid__row  {{content.mod}}">
+					{% include "../common/card/card.twig" with {
+						view:   content.card_view,
+						prefix: content.card_prefix,
+						mod:    content.card_mod,
+						list:   content.card_list,
+					} %}
+				</div>
+			{% endif %}
+			{% if content.btn %}
+				<div class="{{content_prefix}}btn  {{content.mod}}">
+					{% include "../common/button/tpl.twig" with {
+						view:       'tpl',
+						tag:	    content.btn_tag,
+						link:       content.btn_link,
+						attr:       content.btn_attr,
+						modal:      content.btn_modal,
+						prefix:     content.btn_prefix,
+						mod:        content.btn_mod,
+						elem:       content.btn_elem,
+						icon:       content.btn_icon,
+						icon_svg:	content.btn_icon_svg,
+						name:       content.btn,
+					} %}
+				</div>
+			{% endif %}
+			{% if content.desc %}
+				{% for desc in content.desc %}
+				<div class="{{content_prefix}}group">
+					<div class="{{content_prefix}}btn  {{content.mod}}">
+						{% include "../common/button/tpl.twig" with {
+							view:       'tpl',
+							tag:	    content.back_tag,
+							link:       content.back_link,
+							attr:       content.back_attr,
+							modal:      content.back_modal,
+							prefix:     content.back_prefix,
+							mod:        content.back_mod,
+							elem:       content.back_elem,
+							icon:       content.back_icon,
+							icon_svg:	content.back_icon_svg,
+							icon_img:	content.back_img,
+							name:       content.back,
+						} %}
+					</div>
+					<div class="{{content.desc_prefix}}item  {{content.desc_mod}}">
+						<div>
+							{% if desc.label %}
+							<p class="{{content.desc_prefix}}label  {{content.desc_mod}}">
+								{{desc.label}}
+							</p>
+							{% endif %}
+							<picture class="{{content.desc_prefix}}img  {{content.desc_mod}}">
+								<img src="{{desc.img}}" alt="{{content.heading}}" class="img-responsive">
+							</picture>
+						</div>
+						<div class="{{content.desc_prefix}}group  {{content.desc_mod}}">
+							{% if desc.note %}
+	                        <dl class="{{content.desc_prefix}}note  {{content.desc_mod}}">
+	                            {% for n in desc.note %}
+	                            <div>
+	                                <dt>{{n.name}}</dt>
+	                                <dd>{{n.value}}</dd>
+	                            </div>
+	                            {% endfor %}
+	                        </dl>
+	                        {% endif %}
+	                        {% if desc.info %}
+							<div class="{{content.desc_prefix}}info  {{content.desc_mod}}">
+								{{desc.info}}
+							</div>
+	                        {% endif %}
+	                        {% if desc.desc %}
+							<div class="{{content.desc_prefix}}desc  {{content.desc_mod}}">
+								{{desc.desc}}
+							</div>
+	                        {% endif %}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			{% endif %}
+			{% if content.card_prod_list %}
+				{% include "../common/card/card.twig" with {
+					view:   content.card_view,
+					prefix: content.card_prefix,
+					mod:    content.card_mod,
+					list:   content.card_prod_list,
+				} %}
+			{% endif %}
+			{% if content.container %}
+		</div>
+		{% endif %}
+	</section>
+	{% endfor %}
+{% endif %}

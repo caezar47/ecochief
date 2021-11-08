@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Каталог"}  %}
+    </head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {
+            view:           'base',
+            navbar_prefix:  'navbar__',
+            navbar_mod:     'is--index',
+            navbar_mod:     '',
+            navbar_mod:     'is--scroll',
+            active:         page.category,
+        } %} 
+        
+        <main class="{{prefix.content}}wrap" style="background-image:url({{path.img}}/bg/main.jpg)">
+            {% include "../block/page/page.twig" with {
+                view:               'catalog',
+                content_prefix:     prefix.content, 
+                content:[
+                    {
+                        view:           'list1',
+                        container:      'true',
+                        mod:            'is--catalog-category',
+                        heading:        'Масло подсолнечное с травами и специями',
+                        heading_tag:    'h1',
+
+                        bread:[
+                            {
+                                name: 'Главная',
+                                link: page.index,
+                            },
+                            {
+                                name: 'Каталог',
+                                link: page.catalog,
+                            },
+                            {
+                                name: 'Масло подсолнечное с травами и специями',
+                            },
+                        ], 
+
+                        card_view:          'product',
+                        card_prefix:        prefix.card,
+                        card_mod:           'is--product-item',
+                        card_list:[
+                            {
+                                link:   page.card,
+                                img:    [path.img,"/page/catalog/product-item1.png"].join(""),
+                                name:   'Масло подсолнечное Ecochief рафинированное дезодорированное, Тимьян и Чеснок,', 
+                                weight: '<span>500</span> мл', 
+                                label: 'Новинка', 
+                            }, 
+                            {
+                                link:   page.card,
+                                img:    [path.img,"/page/catalog/product-item2.png"].join(""),
+                                name:   'Паштет Французский с сыром', 
+                                weight: '<span>100</span> мл', 
+                                label: 'Новинка', 
+                            }, 
+                            {
+                                link:   page.card,
+                                img:    [path.img,"/page/catalog/product-item3.png"].join(""),
+                                name:   'Икра из кабачков', 
+                                weight: '<span>450</span> мл', 
+                                label: 'Новинка', 
+                            }, 
+                            {
+                                link:   page.card,
+                                img:    [path.img,"/page/catalog/product-item1.png"].join(""),
+                                name:   'Масло оливковое Pure', 
+                                weight: '<span>230</span> мл', 
+                                label: 'Новинка', 
+                            }, 
+                            {
+                                link:   page.card,
+                                img:    [path.img,"/page/catalog/product-item1.png"].join(""),
+                                name:   'Масло подсолнечное Ecochief рафинированное дезодорированное, Тимьян и Чеснок,', 
+                                weight: '<span>500</span> мл', 
+                                label: 'Новинка', 
+                            }, 
+                            {
+                                link:   page.card,
+                                img:    [path.img,"/page/catalog/product-item2.png"].join(""),
+                                name:   'Паштет Французский с сыром', 
+                                weight: '<span>100</span> мл', 
+                                label: 'Новинка', 
+                            }, 
+                            {
+                                link:   page.card,
+                                img:    [path.img,"/page/catalog/product-item3.png"].join(""),
+                                name:   'Икра из кабачков', 
+                                weight: '<span>450</span> мл', 
+                                label: 'Новинка', 
+                            }, 
+                            {
+                                link:   page.card,
+                                img:    [path.img,"/page/catalog/product-item1.png"].join(""),
+                                name:   'Масло оливковое Pure', 
+                                weight: '<span>230</span> мл', 
+                                label: 'Новинка', 
+                            }, 
+                        ],
+
+                        btn:                '+ Ещё',
+                        btn_prefix:         prefix.btn,
+                        btn_tag:            'a',
+                        btn_elem:           'item',
+                        btn_link:           '#',
+                    },
+                ],
+            } %}
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {
+            view:"base",
+            footer_prefix:"footer__"
+        } %}
+
+        {% include "../block/common/script/script.twig" %}
+    </body>
+</html>
